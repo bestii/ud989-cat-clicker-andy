@@ -10,7 +10,7 @@ var model = {
 	}, {
 		clickCount: 0,
 		name: 'Tiger',
-		imgSrc: 'images/Tabby.jpg',
+		imgSrc: 'images/Tiger.jpg',
 		imgAttribution: 'Tiger image'
 
 	}]
