@@ -1,6 +1,7 @@
 /*============== MODEL =============*/
 var model = {
 	currentCat: null,
+	adminUI: false,
 	cats: [{
 		clickCount: 0,
 		name: 'Tabby',
@@ -42,7 +43,13 @@ var octopus = {
 	incrementCounter: function () {
 		model.currentCat.clickCount++;
 		catView.render();
+	},
+
+	getAminUI:function(){
+		return model.adminUI;
 	}
+
+
 };
 
 /* ======= View ======= */
@@ -55,10 +62,16 @@ var catView = {
 		this.catNameElem = document.getElementById('cat-name');
 		this.catImageElem = document.getElementById('cat-img');
 		this.countElem = document.getElementById('cat-count');
+		this.adminBtn=document.getElementById('admin-btn');
+		this.adminSection=$('#admin-section');
 
 		// on click, increment the current cat's counter
 		this.catImageElem.addEventListener('click', function () {
 			octopus.incrementCounter();
+		});
+
+		this.adminBtn.addEventListener('click',function(){
+			catView.adminSection.show();
 		});
 
 		// render this view (update the DOM elements with the right values)
@@ -71,6 +84,7 @@ var catView = {
 		this.countElem.textContent = currentCat.clickCount;
 		this.catNameElem.textContent = currentCat.name;
 		this.catImageElem.src = currentCat.imgSrc;
+		this.adminSection.hide();
 	}
 };
 
