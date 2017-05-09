@@ -63,7 +63,10 @@ var catView = {
 		this.catImageElem = document.getElementById('cat-img');
 		this.countElem = document.getElementById('cat-count');
 		this.adminBtn=document.getElementById('admin-btn');
+		this.cancelBtn=document.getElementById('cancel-btn');
 		this.adminSection=$('#admin-section');
+		
+
 
 		// on click, increment the current cat's counter
 		this.catImageElem.addEventListener('click', function () {
@@ -72,6 +75,10 @@ var catView = {
 
 		this.adminBtn.addEventListener('click',function(){
 			catView.adminSection.show();
+		});
+
+		this.cancelBtn.addEventListener('click',function(){
+			catView.adminSection.hide();
 		});
 
 		// render this view (update the DOM elements with the right values)
