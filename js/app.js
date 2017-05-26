@@ -64,6 +64,7 @@ var catView = {
 		this.countElem = document.getElementById('cat-count');
 		this.adminBtn=document.getElementById('admin-btn');
 		this.cancelBtn=document.getElementById('cancel-btn');
+		this.saveBtn=document.getElementById('save-btn');
 		this.adminSection=$('#admin-section');
 		
 
@@ -78,6 +79,16 @@ var catView = {
 		});
 
 		this.cancelBtn.addEventListener('click',function(){
+			catView.adminSection.hide();
+		});
+
+		this.saveBtn.addEventListener('click',function(){
+			var name=$('#catName').val();
+			var URL=$('#catURL').val();
+			var clickCount=$('#catClick').val();
+
+			console.log("Display:" +name+URL+clickCount);
+
 			catView.adminSection.hide();
 		});
 
